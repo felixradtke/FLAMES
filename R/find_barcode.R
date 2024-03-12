@@ -70,6 +70,8 @@ find_barcode <- function(
     # cutadapt -a 'TSO' -o reads_out --untrimmed-output noTSO_out in_fq(untrimmed.fq)
     cutadapt(
       c(
+        "-j",
+        threads,
         ifelse(TSO_prime == 3, "-a", "-g"),
         TSO_seq,
         "-o",
